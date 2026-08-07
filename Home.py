@@ -141,86 +141,49 @@ st.sidebar.divider()
 
 # Home
 
-st.sidebar.page_link(
-    "Home.py",
-    label="🏠 Home"
-)
-
+st.sidebar.markdown("### 🏠 Home")
 
 # ============================================================
 # STUDENT SECTION
 # ============================================================
 
-st.sidebar.markdown(
-    "### 🎓 Student Portal"
-)
+st.sidebar.markdown("### 🎓 Student Portal")
 
+if st.sidebar.button("📝 Submit Feedback", use_container_width=True):
+    st.switch_page("pages/1_Submit_Feedback.py")
 
-st.sidebar.page_link(
-    "pages/1_Submit_Feedback.py",
-    label="📝 Submit Feedback"
-)
-
-
-st.sidebar.page_link(
-    "pages/2_My_Report.py",
-    label="📄 My Report"
-)
-
-
+if st.sidebar.button("📄 My Report", use_container_width=True):
+    st.switch_page("pages/2_My_Report.py")
 
 # ============================================================
 # FACULTY SECTION
 # ============================================================
 
-st.sidebar.markdown(
-    "### 👨‍🏫 Faculty Portal"
-)
-
+st.sidebar.markdown("### 👨‍🏫 Faculty Portal")
 
 if faculty_logged_in:
 
-    st.sidebar.success(
-        "Welcome Admin"
-    )
+    st.sidebar.success("Welcome Admin")
 
+    st.sidebar.markdown("### 📊 Faculty Management")
 
-    st.sidebar.markdown(
-        "### 📊 Faculty Management"
-    )
+    if st.sidebar.button("📊 Dashboard", use_container_width=True):
+        st.switch_page("pages/4_Dashboard.py")
 
+    if st.sidebar.button("📋 Feedback Records", use_container_width=True):
+        st.switch_page("pages/5_Feedback_Records.py")
 
-    st.sidebar.page_link(
-        "pages/4_Dashboard.py",
-        label="📊 Dashboard"
-    )
+    if st.sidebar.button("📈 Feedback Analysis", use_container_width=True):
+        st.switch_page("pages/6_Feedback_Analysis.py")
 
-
-    st.sidebar.page_link(
-        "pages/5_Feedback_Records.py",
-        label="📋 Feedback Records"
-    )
-
-
-    st.sidebar.page_link(
-        "pages/6_Feedback_Analysis.py",
-        label="📈 Feedback Analysis"
-    )
-
-
-    st.sidebar.page_link(
-        "pages/7_Feedback_Reports.py",
-        label="📄 Feedback Reports"
-    )
-
+    if st.sidebar.button("📄 Feedback Reports", use_container_width=True):
+        st.switch_page("pages/7_Feedback_Reports.py")
 
 else:
 
-    st.sidebar.page_link(
-        "pages/3_Faculty_Portal.py",
-         label="🔐 Faculty Login"
-) 
-
+    if st.sidebar.button("🔐 Faculty Login", use_container_width=True):
+        st.switch_page("pages/3_Faculty_Portal.py")
+    
 
 # ============================================================
 # SETTINGS
